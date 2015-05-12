@@ -15,19 +15,14 @@ h2 {
 	font-size: 1,5em;
 }
 
-a {
-	color: #F00;
-	text-decoration:none;
-}
+.lien-exposes a {padding:0px 5px;color: #0066cc;text-decoration:none;}
+.lien-exposes a:hover {color: #FFF;background-color: #0066cc;}
 
-a:hover {
-	color: #FFF;
-	background-color: #F00;
-}
+.lien-projets a {padding:0px 5px;color: #1c8efc;text-decoration:none;}
+.lien-projets a:hover {color: #FFF;background-color: #1c8efc;}
 
-i {
-	margin-top: 0;
-}
+.lien-workshop a {padding:0px 5px;color: #003d78;text-decoration:none;}
+.lien-workshop a:hover {color: #FFF;background-color: #003d78;}
 
 img {
 	opacity: 0.5;
@@ -49,7 +44,8 @@ img:hover {
 	margin-left: 5%;
 }
 
-#ex-anne, #ex-benjamin, #ex-malo, #ex-cyrielle, #ex-miriam, #ex-sylvain, #ex-perrine, #ex-valia, #ex-lucas, #projet1, #projet2, #projet3, #projet4, #workshop {
+#article0, #article1, #article2, #article3, #article4, #article5, #article6, #article7, #article8, #article9, #article10, #article11, #article12, #article13 {
+	display:none;
 	padding:2%;
 	float:right;
 	width:40%;
