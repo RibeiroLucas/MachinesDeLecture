@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="fr" />
@@ -30,11 +31,10 @@
         function displayArticle(nArticle) 
         {
 
-
             for (var i = 0; i <= 13; i++) 
             {
-            document.getElementById('article'+i).style.display='none';
-            console.log(i);
+                document.getElementById('article'+i).style.display='none';
+                console.log(i);
             }
 
             document.getElementById('article'+nArticle).style.display='block';
@@ -44,6 +44,8 @@
     </SCRIPT>
 
 </head>
+
+
 <body>
 
     <!-- MENU DE GAUCHE (LISTE DES EXPOSES) -->
@@ -51,7 +53,6 @@
         <a href="#expose-anne" onClick="displayArticle(0)">Exposé Anne</a></br>
         <a href="#expose-benjamin" onClick="displayArticle(1)">Exposé Benjamin</a></br>
         <a href="#expose-malo" onClick="displayArticle(2)">Exposé Malo</a></br>
-        
         <a href="#expose-cyrielle" onClick="displayArticle(3)">Exposé Cyrielle</a></br>
         <a href="#expose-miriam" onClick="displayArticle(4)">Exposé Miriam</a></br>
         <a href="#expose-sylvain" onClick="displayArticle(5)">Exposé Sylvain</a></br>
@@ -111,4 +112,5 @@
       <h1>Workshop Alessandro Ludovico</h1>
   </div>
 </body>
+
 </html>
