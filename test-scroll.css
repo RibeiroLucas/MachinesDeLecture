@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  font-family: segoe ui, helvetica neue, helvetica, arial, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*cacher les barres de défilement*/
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/*div comprennant tout le contenu (sans le panneau de zoom)*/
+#contenu {
+  /* changer le curseur */
+  cursor: crosshair;
+}
+
+/*panneau de contrôle du zoom en haut à gauche*/
+#control-zoom {
+  background-color: #000;
+  color:#FFF;
+  padding:10px;
+  margin:20px;
+  display:block;
+  position: fixed; 
+  float:left;
+}
+
+#ligne1, #ligne2, #ligne3, #ligne4, #ligne5 {
+  float:left;
+  width:600%;
+}
+
+#ligne1 {
+  display:block;
+}
+
+.faux-texte {
+  width:300px;
+  padding:10px;
+  margin:10px;
+  float:left;
+  border-width: 5px;
+  border-style: dashed;
+  border-color: black;
+}
