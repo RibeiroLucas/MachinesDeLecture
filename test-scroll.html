@@ -5,6 +5,8 @@
 <meta name="version" content="445"/>
 <title>test scroll</title>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,900' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <link rel="stylesheet" href="test-scroll.css">
   <!-- script pour scroller avec la souris -->
   <script type="text/javascript">
@@ -19,18 +21,61 @@
   window.addEventListener('mousedown', function(e){ curDown = true; curYPos = e.pageY; curXPos = e.pageX; });
   window.addEventListener('mouseup', function(e){ curDown = false; });
   </script>
+  <script>
+    jQuery(document).ready(function($)
+    {
+        // Set initial zoom level
+        var zoom_level=100;
+
+        // Click events
+        $('#zoom_in').click(function() { zoom_page(10, $(this)) });
+        $('#zoom_out').click(function() { zoom_page(-10, $(this)) });
+        $('#zoom_reset').click(function() { zoom_page(0, $(this)) });
+
+        // Zoom function
+        function zoom_page(step, trigger)
+        {
+            // Zoom just to steps in or out
+            if(zoom_level>=180 && step>0 || zoom_level<=30 && step<0) return;
+
+            // Set / reset zoom
+            if(step==0) zoom_level=100;
+            else zoom_level=zoom_level+step;
+
+            // Set page zoom via CSS
+            $('#contenu').css({
+                transform: 'scale('+(zoom_level/100)+')', // set zoom
+                transformOrigin: '0 0' // set transform scale base
+            });
+
+            // Adjust page to zoom width
+            if(zoom_level>100) $('#contenu').css({ width: (zoom_level*1.2)+'%' });
+            else $('#contenu').css({ width: '100%' });
+
+            // Activate / deaktivate trigger (use CSS to make them look different)
+            if(zoom_level>=180 || zoom_level<=30) trigger.addClass('disabled');
+            else trigger.parents('ul').find('.disabled').removeClass('disabled');
+            if(zoom_level!=100) $('#zoom_reset').removeClass('disabled');
+            else $('#zoom_reset').addClass('disabled');
+        }
+    });
+</script>
 </head>
 <body>
   <div id="control-zoom">
     <ul>
-      <li><a id="zoom_in">zoom in</a></li>
-      <li><a id="zoom_out">zoom out</a></li>
-      <li><a id="zoom_reset">reset zoom</a></li>
+      <li><a id="zoom_in">+</a></li>
+      <li><a id="zoom_out">-</a></li>
+      <li><a id="zoom_reset" style="font-weight:400; font-size:12px;}">reset</a></li>
     </ul>
+  </div>
+  <div id="titre-site">
+    <h1><span style="background-color: #F00;padding:0 10px 0 10px;" >Machines de lecture</span></h1>
+    <h2><span style="background-color: #F00;padding:0 10px 0 10px;" >workshop ESADSE</span></h2>
   </div>
   <div id="contenu">
     <div id="ligne1">
-      <div class="faux-texte">
+      <div class="faux-texte" style="-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);">
         Faux-texte: a pour fonction de faire office de texte de substitution ou d'outil permettant la comparaison et l'appréciation de différentes polices. On appelle Lipsum un texte qui, en l'absence du texte définitif, sert de substitut aux futurs contenus lors de la production de maquettes pour les publications ou sites Web. Le terme Lipsum est issu de la contraction du plus connu de ce type de texte "Lorem ipsum". Ils sont également connus sous les noms de texte blanc, faux-texte, bolo bolo, pseudo texte, texte factice, vrai faux texte, faux contenu, texte de remplissage, de remplacement, ou d'attente. Outre son usage dans les milieux de l'imprimerie et du graphisme, certains chansonniers en font l'utilisation lors de la composition de mélodies, chantant ces textes en amont de l'écriture de leur textes. L'utilisation de faux-textes aurait déjà été une pratique courante depuis le 16ème siècle dans les milieux de l'imprimerie et de la composition.
       </div>
       <div class="faux-texte">
