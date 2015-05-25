@@ -1,0 +1,104 @@
+img {
+	max-width: 10cm;
+	max-height: 15cm;
+}
+
+div{
+	overflow:hidden;
+}
+
+p {
+	margin-top: 0mm;
+	margin-bottom:0mm;
+	margin-right:2mm;
+	margin-left: 2mm;
+
+	font-family: 'Arial', serif;
+	font-size: 5pt;
+
+	word-wrap: break-word;
+	hyphens: auto;
+
+	-moz-column-gap:2em;
+	-moz-column-count:2;
+
+}
+
+h2 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 11pt;
+}
+
+h1 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 14pt;
+}
+
+#bloc1{
+	background-color: rgb(230, 230, 230);
+
+	/*	width: 29.7mm;
+	height: 21.0mm;*/
+
+	width: 29.7mm;
+	height: 21.0mm;
+
+
+	transform-origin: bottom right ;
+	transform: rotate(180deg);
+
+	margin-left:-29.7mm;
+	margin-top:-21.0mm;
+	margin-bottom:21.0mm;
+}
+
+
+#bloc2{
+	background: #ff00ff;
+
+
+	width: 29.7mm;
+	height: 21.0mm;
+
+	/*
+	width: 210mm;
+	height: 297mm;
+	transform: rotate(-90deg);*/
+}
+
+#bloc3{
+	background: lightblue;
+
+
+	width: 29.7mm;
+	height: 42.0mm;
+
+	transform: rotate(180deg);
+	transform-origin: top right;
+	/*
+	float: right;
+	width: 297mm;
+	height: 420mm;
+	*/
+}
+
+#bloc4{
+	background: khaki;
+
+/*	width: 59.4mm;
+	height: 42.0mm;
+	*/
+
+	width: 42.0mm;
+	height: 59.4mm;
+
+	bottom: 8mm;
+	left:8.6mm;
+
+	transform-origin: bottom right;
+	transform: rotate(90deg);
+
+	margin-top:-59.4mm;
+	margin-left:-42.0mm;
+
+}
